@@ -1,0 +1,75 @@
+import { Component, OnInit } from '@angular/core';
+import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
+
+
+@Component({
+  selector: 'app-widget-area',
+  templateUrl: './area.component.html',
+  styleUrls: ['./area.component.scss']
+})
+export class AreaComponent implements OnInit {
+  Highcharts: typeof Highcharts = Highcharts; // required
+  chartOptions: Highcharts.Options = {}
+
+  constructor() { 
+
+  }
+
+  ngOnInit():void {
+    this.chartOptions = {
+      chart: {
+          type: 'area'
+      },
+      title: {
+          text: 'Random Data'
+      },
+      subtitle: {
+          text: 'Demo'
+      },
+      tooltip: {
+          split: true,
+          valueSuffix: ' millions'
+      },
+      credits:{
+        enabled:false
+      },
+      exporting:{
+        enabled: true
+      },
+      series: [{
+          name: 'Asia',
+          data: [502, 635, 809, 947, 1402, 3634, 5268],
+          type:"area"
+      }, {
+          name: 'Africa',
+          data: [106, 107, 111, 133, 221, 767, 1766],
+          type:"area"
+  
+      }, {
+          name: 'Europe',
+          data: [163, 203, 276, 408, 547, 729, 628],
+          type:"area"
+  
+      }, {
+          name: 'America',
+          data: [18, 31, 54, 156, 339, 818, 1201],
+          type:"area"
+  
+      }, {
+          name: 'Oceania',
+          data: [2, 2, 2, 6, 13, 30, 46],
+          type:"area"
+  
+      }]
+  };
+  HC_exporting(Highcharts);
+
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      )
+    }, 300);
+  }
+
+}
