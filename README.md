@@ -1,10 +1,12 @@
 # Dashboard
 
-- As it is trial project it doesn't implemented any tests even I don't like developing like that I follow some tutorial. No way to validat everything will work forever.
-- Authentication is missing.
-- API is missing.
+- As it is trial project it doesn't implemented any tests even I don't like developing like that I follow some tutorial. No way to validate everything will work after some changes. Don't do like that follow TDD please :)
+- Authentication is missing. So everybody can access your dashboard if you publish it.
+- API is missing :( I would probably write some API with FastAPI and bring data from there.
 - But it looks great :)
-- I might add later on missing parts and improve theme of dashboard. Ofc it depends on my availability.
+- I might add later on missing parts and improve theme of dashboard. (There are many css stuff I adore I might implement here)
+- There is a possibility I might containerize it.
+- Ofc it depends on my availability.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
