@@ -1,4 +1,6 @@
 <h3 style="background: #8F3985; color:#EFD9CE">Dashboard</h3>
+
+
 - As it is trial project it doesn't implemented any tests even I don't like developing like that I follow some tutorial. No way to validate everything will work after some changes. Don't do like that follow TDD please :)
 - Authentication is missing. So everybody can access your dashboard if you publish it.
 - API is missing :( I would probably write some API with FastAPI and bring data from there.
