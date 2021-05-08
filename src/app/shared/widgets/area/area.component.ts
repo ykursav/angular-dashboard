@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
@@ -10,8 +10,8 @@ import HC_exporting from 'highcharts/modules/exporting';
 })
 export class AreaComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts; // required
-  chartOptions: Highcharts.Options = {}
-
+  chartOptions: Highcharts.Options = {};
+  @Input() data = [];
   constructor() { 
 
   }
@@ -37,31 +37,7 @@ export class AreaComponent implements OnInit {
       exporting:{
         enabled: true
       },
-      series: [{
-          name: 'Asia',
-          data: [502, 635, 809, 947, 1402, 3634, 5268],
-          type:"area"
-      }, {
-          name: 'Africa',
-          data: [106, 107, 111, 133, 221, 767, 1766],
-          type:"area"
-  
-      }, {
-          name: 'Europe',
-          data: [163, 203, 276, 408, 547, 729, 628],
-          type:"area"
-  
-      }, {
-          name: 'America',
-          data: [18, 31, 54, 156, 339, 818, 1201],
-          type:"area"
-  
-      }, {
-          name: 'Oceania',
-          data: [2, 2, 2, 6, 13, 30, 46],
-          type:"area"
-  
-      }]
+      series: this.data
   };
   HC_exporting(Highcharts);
 
